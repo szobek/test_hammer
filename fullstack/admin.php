@@ -4,11 +4,11 @@
 <head>
 
     <title>Document</title>
+    <?php include "header.php"; ?>
 </head>
 
 <body>
-    
-    <?php include "header.php"; ?>
+
     <?php
     require_once "connect-to-db.php";
 
@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h1 class="text-center ">admin page</h1>
+                <h1 class="text-center ">admin page</h1>
             </div>
         </div>
         <div class="row">
@@ -46,19 +46,27 @@
                                 <td><?php echo $elem["title"] ?></td>
                                 <td><?php echo $elem["news_desc"] ?></td>
                                 <td>
-                                    <button class="btn btn-success">
-                                        U
-                                    </button>
+                                    <a href="setNews.php?function=update&id=<?php echo $elem["id"] ?>">
+                                        <button class="btn btn-success">
+                                            U
+                                        </button>
+                                    </a>
 
-                                    <button class="btn btn-danger">
-                                        X
-                                    </button>
+                                    <a href="setNews.php?function=delete&id=<?php echo $elem["id"] ?>">
+                                        <button class="btn btn-danger">
+                                            X
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
                 </table>
+
             </div>
+        </div>
+        <div class="row">
+            <div class="col-12"><button class="btn btn-primary">Create new</button></div>
         </div>
     </div>
 

@@ -24,16 +24,23 @@
 
                     <?php
                     require_once "class_news.php";
-                    foreach ($news_db as $elem) :
+                    require_once "connect-to-db.php";
+
+    $result = open("SELECT * FROM `news`");
+    if (count($result) === 0) {
+        echo "Nincs hír";
+        die();
+    }
+                    foreach ($result as $elem) :
                     ?>
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="<?php echo $elem->getImage(); ?>" alt="image">
+                            <img class="card-img-top" src="<?php echo $elem["image_url"]; ?>" alt="image">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $elem->getTitle(); ?></h5>
-                                <p class="card-text"><?php echo $elem->getContent(); ?></p>
+                                <h5 class="card-title"><?php echo $elem["title"]; ?></h5>
+                                <p class="card-text"><?php echo $elem["news_desc"]; ?></p>
                             </div>
                             <div class="card-footer">
-                                <a href="news_single.php?id=<?php echo $elem->getId(); ?>"> <button class="btn btn-primary">Tovább</button></a>
+                                <a href="news_single.php?id=<?php echo $elem["id"]; ?>"> <button class="btn btn-primary">Tovább</button></a>
                             </div>
                         </div>
                     <?php endforeach ?>

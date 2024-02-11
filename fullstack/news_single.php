@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Single</title>
-<?php include "header.php"; ?>
-</head>
-
-<body>
-    <?php
+<?php
     $news = null;
     include_once "class_news.php";
 
     if (isset($_REQUEST["id"])) {
         $id = $_REQUEST["id"];
 
-        $i = 0;
-        while ($i < count($news_db) && $id != $news_db[$i]->getId()) $i++;
+        require_once "connect-to-db.php";
 
-
-        if ($i < count($news_db)) {
-            $news = $news_db[$i];
-            //echo $news_db[$i]->obj_to_json();
+        $result = open("SELECT * FROM `news` WHERE `id`=$id");
+        if (count($result) === 0) {
+            echo "Nincs hír";
+            die();
         } else {
-            echo "nincs ilyen hír";
-            exit;
+            $news = $result[0];
         }
     } else {
         echo "Nincs id";
@@ -31,14 +20,25 @@
     }
 
     ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title><?php echo $news["title"]; ?></title>
+    <?php include "header.php"; ?>
+</head>
+
+<body>
+   
     <div class="container">
         <div class="row">
-            <div class="col-4 offset-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php echo $news->getImage(); ?>" alt="image">
+            <div class="col-8 offset-2 mb-5 mt-5">
+                <div class="card" >
+                    <img class="card-img-top" src="<?php echo $news["image_url"]; ?>" alt="image">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $news->getTitle(); ?></h5>
-                        <p class="card-text"><?php echo $news->getContent(); ?></p>
+                        <h5 class="card-title"><?php echo $news["title"]; ?></h5>
+                        <p class="card-text"><?php echo $news["content"]; ?></p>
                     </div>
                 </div>
                 <div class="col-auto"><a href="news_list.php">Vissza</a></div>
