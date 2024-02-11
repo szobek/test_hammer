@@ -10,6 +10,9 @@ switch ($_REQUEST["function"]) {
         case "saveAfterEdit":
             updateNews($_REQUEST["id"]);
             break;
+            case "createNewsView":
+                createView();
+                break;
     default:
         null;
 }
@@ -42,4 +45,8 @@ function updateNews(int $id){
     open("UPDATE `news` SET title='$title',content='$content',news_desc='$desc' WHERE `id`=$id");
     header('Location: admin.php');
 
+}
+
+function createView(){
+    include "createAndUpdate.php";    
 }

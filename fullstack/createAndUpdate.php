@@ -3,6 +3,7 @@
 if (isset($result) && $result != null) {
     $news = $result[0];
     $title="Update | ".$news["title"];
+    $action="setNews.php?function=saveAfterEdit&id=". $news["id"] ;
 } else {
     $news = [];
     $news["id"] = "";
@@ -10,6 +11,7 @@ if (isset($result) && $result != null) {
     $news["desc"] = "";
     $news["content"] = "";
     $title="Create news";
+    $action="setNews.php?function=saveAfterEdit";
 }
 ?>
 
@@ -26,7 +28,7 @@ if (isset($result) && $result != null) {
         <div class="row">
             <div class="col-8 offset-2">
 
-                <form action="setNews.php?function=saveAfterEdit&id=<?php echo $news["id"] ?>" method="post">
+                <form action="" method="post">
                     <label for="title">Title</label>
                     <input type="text" name="title" value="<?php echo $news["title"] ?>" id="title" class="form-control">
 
