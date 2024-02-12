@@ -16,7 +16,7 @@
     <div class="container ">
         <div class="row">
             <div class="col-12">
-                <h1 class="m-5 text-center"> Hírek</h1>
+                <h1 class="m-5 text-center"> News</h1>
             </div>
         </div>
         <div class="row">
