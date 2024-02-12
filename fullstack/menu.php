@@ -8,7 +8,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="news_list.php">News list</a>
+          <a class="nav-link active" aria-current="page" href="newsList.php">News list</a>
         </li>
 <?php
 if(!isset($_SESSION)) session_start();

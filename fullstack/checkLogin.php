@@ -12,7 +12,7 @@
     session_start();
 
     $req = $_REQUEST;
-    require_once "connect-to-db.php";
+    require_once "connectToDb.php";
 
     $result = open("SELECT * FROM `users` WHERE `email`=? and `password`=?",[$req["username"], sha1($req["psw"])]);
     if(count($result)>0){

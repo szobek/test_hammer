@@ -1,5 +1,5 @@
 <?php
- require_once "connect-to-db.php";
+ require_once "connectToDb.php";
 switch ($_REQUEST["function"]) {
     case "delete":
         deleteNews($_REQUEST["id"]);
@@ -59,7 +59,6 @@ function saveNewsToDB(){
     $title=$_REQUEST["title"];
     $content=$_REQUEST["content"];
     $desc=$_REQUEST["desc"];
-    //INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) VALUES (NULL, 'oooooooooooooooooo', '1', current_timestamp(), 'kkkkkkkkkkkkkkkkkkkkkkk', 'kkkkkkk', 'kkkkkkkkkkkkkkkkkkkkkkkkkkk'); 
     $result=open("INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) VALUES (NULL, '$title', '1', current_timestamp(), '$content', 'kkkkkkk', '$desc')");
     if($result===[])header('Location: admin.php');
     else header('Location: setNews.php?function=createNewsView');

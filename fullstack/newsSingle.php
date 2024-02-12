@@ -5,7 +5,7 @@
     if (isset($_REQUEST["id"])) {
         $id = $_REQUEST["id"];
 
-        require_once "connect-to-db.php";
+        require_once "connectToDb.php";
 
         $result = open("SELECT * FROM `news` WHERE `id`=$id");
         if (count($result) === 0) {
@@ -47,7 +47,7 @@
                         <p class="card-text"><?php echo $news["content"]; ?></p>
                     </div>
                 </div>
-                <div class="col-auto"><a href="news_list.php">Vissza</a></div>
+                <div class="col-auto"><a href="newsList.php">Vissza</a></div>
             </div>
         </div>
     </div>

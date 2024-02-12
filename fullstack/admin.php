@@ -18,7 +18,7 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
 <body>
 <?php include "menu.php"; ?>
     <?php
-    require_once "connect-to-db.php";
+    require_once "connectToDb.php";
 
     $result = open("SELECT * FROM `news`");
     if (count($result) === 0) {

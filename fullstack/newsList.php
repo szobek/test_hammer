@@ -25,7 +25,7 @@
 
                     <?php
                     require_once "class_news.php";
-                    require_once "connect-to-db.php";
+                    require_once "connectToDb.php";
 
     $result = open("SELECT * FROM `news`");
     if (count($result) === 0) {
@@ -47,7 +47,7 @@
                                 <p class="card-text"><?php echo $elem["news_desc"]; ?></p>
                             </div>
                             <div class="card-footer">
-                                <a href="news_single.php?id=<?php echo $elem["id"]; ?>"> <button class="btn btn-primary">Tovább</button></a>
+                                <a href="newsSingle.php?id=<?php echo $elem["id"]; ?>"> <button class="btn btn-primary">Tovább</button></a>
                             </div>
                         </div>
                     <?php endforeach ?>

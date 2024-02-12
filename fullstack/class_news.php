@@ -48,9 +48,6 @@ class News{
         return $this->id;
     }
 
-    function obj_to_text():String{
-        return "A hír címe: $this->title, a szerző: $this->author,dátum: $this->created... ";
-    }
 
     function obj_to_json(){
         return json_encode(

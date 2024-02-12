@@ -18,11 +18,12 @@ if(isset($_SESSION["logged"])){
 ?>
 <div class="login-page">
   <div class="form">
-    <form class="login-form" method="post" action="check_login.php">
+    <form class="login-form" method="post" action="checkLogin.php">
       <input type="text" name="username" placeholder="username"/>
       <input type="password" name="psw" placeholder="password"/>
       <button>login</button>
     </form>
+    <a href="newsList.php">Open news list without login</a>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 <?php
 
 function getUserNameById(int $id):String{
-    require_once "connect-to-db.php";
+    require_once "connectToDb.php";
     $result=open("SELECT `name` FROM users WHERE id=$id");
     return $result[0]["name"];
 }
