@@ -7,6 +7,7 @@
 <script src="main.js"></script>
 </head>
 <body>
+  
 <div class="d-flex justify-content-center">
   <div class="col-sm-6">
     <form action="controll.php" method="POST">
