@@ -17,6 +17,7 @@
     $result = open("SELECT * FROM `users` WHERE `email`=? and `password`=?",[$req["username"], sha1($req["psw"])]);
     if(count($result)>0){
         $_SESSION["logged"]=true;
+        $_SESSION["id"]=$result[0]["id"];
 header('Location: admin.php');
     }
     else  header('Location: login.php' , true);

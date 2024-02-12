@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["logged"])) header('Location: login.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +12,11 @@
 
     <title>Document</title>
     <?php include "header.php"; ?>
+    <script src="js/admin.js"></script>
 </head>
 
 <body>
-
+<?php include "menu.php"; ?>
     <?php
     require_once "connect-to-db.php";
 
@@ -52,7 +60,7 @@
                                         </button>
                                     </a>
 
-                                    <a href="setNews.php?function=delete&id=<?php echo $elem["id"] ?>">
+                                    <a onclick="deleteFunction(<?php echo $elem['id'] ?>)">
                                         <button class="btn btn-danger">
                                             X
                                         </button>

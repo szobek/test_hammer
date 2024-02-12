@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION["logged"])) header('Location: login.php');
+
+
+
 if (isset($result) && $result != null) {
     $news = $result[0];
     $title="Update | ".$news["title"];
@@ -24,6 +29,7 @@ if (isset($result) && $result != null) {
 </head>
 
 <body>
+<?php include "menu.php"; ?>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
