@@ -38,6 +38,12 @@
                             <img class="card-img-top" src="<?php echo $elem["image_url"]; ?>" alt="image">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $elem["title"]; ?></h5>
+                                <p><small>
+                                    <?php include_once "usercontroller.php"; include_once "newscontroller.php";
+                                echo getUserNameById($elem["author"]);
+                                echo "<br />";
+                                echo getNewsDate($elem["created"]);
+                                ?> </small></p>
                                 <p class="card-text"><?php echo $elem["news_desc"]; ?></p>
                             </div>
                             <div class="card-footer">

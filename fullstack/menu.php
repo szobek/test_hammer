@@ -13,7 +13,6 @@
 <?php
 if(!isset($_SESSION)) session_start();
 
-
 if(isset($_SESSION["logged"])): ?>
         <li class="nav-item">
           <a class="nav-link" href="admin.php">Admin</a>
