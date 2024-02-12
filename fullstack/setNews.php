@@ -13,6 +13,10 @@ switch ($_REQUEST["function"]) {
             case "createNewsView":
                 createView();
                 break;
+            case "createNews":
+saveNewsToDB();
+break;
+
     default:
         null;
 }
@@ -49,4 +53,15 @@ function updateNews(int $id){
 
 function createView(){
     include "createAndUpdate.php";    
+}
+
+function saveNewsToDB(){
+    $title=$_REQUEST["title"];
+    $content=$_REQUEST["content"];
+    $desc=$_REQUEST["desc"];
+    //INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) VALUES (NULL, 'oooooooooooooooooo', '1', current_timestamp(), 'kkkkkkkkkkkkkkkkkkkkkkk', 'kkkkkkk', 'kkkkkkkkkkkkkkkkkkkkkkkkkkk'); 
+    $result=open("INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) VALUES (NULL, '$title', '1', current_timestamp(), '$content', 'kkkkkkk', '$desc')");
+    if($result===[])header('Location: admin.php');
+    else header('Location: setNews.php?function=createNewsView');
+
 }

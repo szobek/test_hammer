@@ -1,5 +1,4 @@
 <?php
-
 if (isset($result) && $result != null) {
     $news = $result[0];
     $title="Update | ".$news["title"];
@@ -7,12 +6,13 @@ if (isset($result) && $result != null) {
 } else {
     $news = [];
     $news["id"] = "";
-    $news["tile"] = "";
-    $news["desc"] = "";
+    $news["title"] = "";
+    $news["news_desc"] = "";
     $news["content"] = "";
     $title="Create news";
-    $action="setNews.php?function=saveAfterEdit";
+    $action="setNews.php?function=createNews";
 }
+//var_dump($news);
 ?>
 
 <!DOCTYPE html>
@@ -28,15 +28,15 @@ if (isset($result) && $result != null) {
         <div class="row">
             <div class="col-8 offset-2">
 
-                <form action="" method="post">
+                <form action="<?php echo $action; ?>" method="post">
                     <label for="title">Title</label>
-                    <input type="text" name="title" value="<?php echo $news["title"] ?>" id="title" class="form-control">
+                    <input type="text" name="title" value="<?php echo $news["title"]; ?>" id="title" class="form-control">
 
                     <label for="content">Content</label>
-                    <input type="text" name="content" value="<?php echo $news["content"] ?>" id="content" class="form-control">
+                    <input type="text" name="content" value="<?php echo $news["content"]; ?>" id="content" class="form-control">
 
                     <label for="desc">Description</label>
-                    <input type="text" name="desc" value="<?php echo $news["news_desc"] ?>" id="desc" class="form-control">
+                    <input type="text" name="desc" value="<?php echo $news["news_desc"]; ?>" id="desc" class="form-control">
 
                     <button class="btn btn-primary">Save</button>
                 </form>
