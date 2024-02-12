@@ -8,3 +8,10 @@ switch ($_REQUEST["function"]) {
     default:
         null;
 }
+
+function logout(){
+    session_destroy();
+    header('Location: login.php');
+}
+
+
