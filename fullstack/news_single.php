@@ -37,7 +37,7 @@
                 <div class="card" >
                     <img class="card-img-top" src="<?php echo $news["image_url"]; ?>" alt="image">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $news["title"]; ?></h5>
+                        <h5 class="card-title news-title"><?php echo $news["title"]; ?></h5>
                         <p><small>
                                     <?php include_once "usercontroller.php"; include_once "newscontroller.php";
                                 echo "Write by: <b>".getUserNameById($news["author"])."</b>";
