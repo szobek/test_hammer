@@ -1,2 +1,2 @@
 <?php
-header('Location: login.php');
+header('Location: news_list.php');

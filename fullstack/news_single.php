@@ -30,7 +30,7 @@
 </head>
 
 <body>
-   
+<?php include "menu.php"; ?>   
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 mb-5 mt-5">
