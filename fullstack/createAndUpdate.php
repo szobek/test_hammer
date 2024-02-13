@@ -26,6 +26,8 @@ if (isset($result) && $result != null) {
 <head>
     <?php include "header.php"; ?>
     <title><?php echo $title; ?></title>
+    <script src="js/tinymce/tinymce.min.js"></script>
+   <script src="js/createAndUpdate.js"></script>
 </head>
 
 <body>
@@ -39,7 +41,7 @@ if (isset($result) && $result != null) {
                     <input type="text" name="title" value="<?php echo $news["title"]; ?>" id="title" class="form-control">
 
                     <label for="content">Content</label>
-                    <input type="text" name="content" value="<?php echo $news["content"]; ?>" id="content" class="form-control">
+                    <textarea name="content" id="content" class="form-control"><?php echo $news["content"]; ?></textarea>
 
                     <label for="desc">Description</label>
                     <input type="text" name="desc" value="<?php echo $news["news_desc"]; ?>" id="desc" class="form-control">
