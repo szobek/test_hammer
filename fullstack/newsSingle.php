@@ -27,6 +27,7 @@
 <head>
     <title><?php echo $news["title"]; ?></title>
     <?php include "header.php"; ?>
+    <link rel="stylesheet" href="css/newsSingle.css">
 </head>
 
 <body>
@@ -34,15 +35,15 @@
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 mb-5 mt-5">
+                <h1 class="single-news-title"><?php echo $news["title"];?></h1>
                 <div class="card" >
                     <img class="card-img-top" src="<?php echo $news["image_url"]; ?>" alt="image">
                     <div class="card-body">
-                        <h5 class="card-title news-title"><?php echo $news["title"]; ?></h5>
                         <p><small>
                                     <?php include_once "usercontroller.php"; include_once "newscontroller.php";
                                 echo "Write by: <b>".getUserNameById($news["author"])."</b>";
                                 echo "<br />";
-                                echo "Date: ".getNewsDate($news["created"]);
+                                echo "Date: <b>".getNewsDate($news["created"])."</b>";
                                 ?> </small></p>
                         <p class="card-text"><?php echo $news["content"]; ?></p>
                     </div>
