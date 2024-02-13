@@ -36,8 +36,8 @@ var coo = [
         content: ""
     },
     {
-        hely: "Budapest",//////////////////////////////47.512924, 19.043537
-        coord: { lat: 47.5, lng: 19.083 },
+        hely: "Budapest",//////////////////////////////, 
+        coord: { lat: 47.512924, lng: 19.043537 },
         name: "Kovács Ágnes",
         content: ""
     },
@@ -78,8 +78,8 @@ var coo = [
         content: ""
     },
     {
-        hely: "Budapest",////////////////////////////////47.511171, 19.043320
-        coord: { lat: 47.5, lng: 19.083 },
+        hely: "Budapest",////////////////////////////////, 
+        coord: { lat: 47.511171, lng: 19.043320 },
         name: "Faludi Attila",
         content: ""
     },
@@ -144,8 +144,8 @@ var coo = [
         content: ""
     },
     {
-        hely: "Budapest",///////////////////////47.509564393727004, 19.043212220346206
-        coord: { lat: 47.5, lng: 19.083 },
+        hely: "Budapest",///////////////////////, 
+        coord: { lat: 47.509564393727004, lng: 19.043212220346206 },
         name: "Magán Judit",
         content: ""
     },
@@ -168,8 +168,8 @@ var coo = [
         content: ""
     },
     {
-        hely: "Budapest",///////////////////////47.50784780966348, 19.040887212988707
-        coord: { lat: 47.5, lng: 19.083 },
+        hely: "Budapest",///////////////////////, 
+        coord: { lat: 47.50784780966348, lng: 19.040887212988707},
         name: "Orosz Erzsébet",
         content: ""
     },
@@ -180,8 +180,8 @@ var coo = [
         content: ""
     },
     {
-        hely: "Budapest",/////////////////////////////47.5064233675002, 19.040887212988707
-        coord: { lat: 47.5, lng: 19.083 },
+        hely: "Budapest",/////////////////////////////, 
+        coord: { lat: 47.5064233675002, lng: 19.040887212988707 },
         name: "Mudra Szilvia",
         content: ""
     },

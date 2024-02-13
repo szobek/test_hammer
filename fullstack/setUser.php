@@ -10,8 +10,8 @@ switch ($_REQUEST["function"]) {
 }
 
 function logout(){
-    session_destroy();
-    header('Location: login.php');
+    require_once "usercontroller.php";
+    loggingout();
 }
 
 

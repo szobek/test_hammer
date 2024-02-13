@@ -5,7 +5,7 @@ function getUserNameById(int $id):String{
     $result=open("SELECT `name` FROM users WHERE id=$id");
     return $result[0]["name"];
 }
-function logout(){
+function loggingout(){
     session_destroy();
     header('Location: login.php');
 }
