@@ -16,4 +16,5 @@ a menüben le van kezelve ha valaki nincs bejelentkezve
 
 ## Design
 a design nagyon alap, legtöbbször a bs dolgait használtam
+készült favicon
 
