@@ -25,7 +25,7 @@ function deleteNews(int $id)
 {
     $success = false;
 
-    $result = open("DELETE FROM `news` WHERE `id`=$id");
+    $result = open("DELETE FROM `news` WHERE `id`=?",[$id]);
     $success = ($result > 0) ? true : false;
     if ($success) {
         header('Location: admin.php');
@@ -36,7 +36,7 @@ function deleteNews(int $id)
 
 function updateNewsView(int $id)
 {
-    $result = open("SELECT * FROM `news` WHERE `id`=$id");
+    $result = open("SELECT * FROM `news` WHERE `id`=?",[$id]);
     
     include "createAndUpdate.php";
 }
@@ -46,7 +46,7 @@ function updateNews(int $id){
     $desc=$_REQUEST["desc"];
     $content=$_REQUEST["content"];
 
-    open("UPDATE `news` SET title='$title',content='$content',news_desc='$desc' WHERE `id`=$id");
+    open("UPDATE `news` SET title=?,content=?,news_desc=? WHERE `id`=?",[$title,$content,$desc,$id]);
     header('Location: admin.php');
 
 }
@@ -59,7 +59,8 @@ function saveNewsToDB(){
     $title=$_REQUEST["title"];
     $content=$_REQUEST["content"];
     $desc=$_REQUEST["desc"];
-    $result=open("INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) VALUES (NULL, '$title', '1', current_timestamp(), '$content', 'kkkkkkk', '$desc')");
+    $result=open("INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) 
+    VALUES (NULL, ?, '1', current_timestamp(),? , 'kkkkkkk', ?)",[$title,$content,$desc]);
     if($result===[])header('Location: admin.php');
     else header('Location: setNews.php?function=createNewsView');
 

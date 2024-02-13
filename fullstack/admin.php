@@ -13,6 +13,7 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
     <title>Document</title>
     <?php include "header.php"; ?>
     <script src="js/admin.js"></script>
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -51,7 +52,7 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
                         ?>
                             <tr>
                                 <td><?php echo $elem["id"] ?></td>
-                                <td><?php echo $elem["title"] ?></td>
+                                <td> <a href="newsSingle.php?id=<?php echo $elem["id"] ?>"> <?php echo $elem["title"] ?></a></td>
                                 <td><?php echo $elem["news_desc"] ?></td>
                                 <td>
                                     <a href="setNews.php?function=update&id=<?php echo $elem["id"] ?>">

@@ -7,7 +7,7 @@
 
         require_once "connectToDb.php";
 
-        $result = open("SELECT * FROM `news` WHERE `id`=$id");
+        $result = open("SELECT * FROM `news` WHERE `id`=?",[$id]);
         if (count($result) === 0) {
             echo "Nincs hír";
             die();
