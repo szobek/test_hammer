@@ -11,15 +11,15 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
 <head>
 
     <title>Document</title>
-    <?php include "header.php"; ?>
+    <?php include "sections/header.php"; ?>
     <script src="js/admin.js"></script>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
-<?php include "menu.php"; ?>
+<?php include "sections/menu.php"; ?>
     <?php
-    require_once "connectToDb.php";
+    require_once "../connectToDb.php";
 
     $result = open("SELECT * FROM `news`");
     if (count($result) === 0):

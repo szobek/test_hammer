@@ -8,11 +8,11 @@
         }
     </style>
 <title>List</title>
-    <?php include "header.php"; ?>
+    <?php include "sections/header.php"; ?>
 </head>
 
 <body>
-<?php include "menu.php"; ?>
+<?php include "sections/menu.php"; ?>
     <div class="container ">
         <div class="row">
             <div class="col-12">
@@ -24,8 +24,8 @@
                 <div class="d-flex flex-wrap news-list">
 
                     <?php
-                    require_once "class_news.php";
-                    require_once "connectToDb.php";
+                    require_once "../classes/class_news.php";
+                    require_once "../connectToDb.php";
 
     $result = open("SELECT * FROM `news`");
     if (count($result) === 0) {
@@ -39,7 +39,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $elem["title"]; ?></h5>
                                 <p><small>
-                                    <?php include_once "usercontroller.php"; include_once "newscontroller.php";
+                                    <?php include_once "../controllers/usercontroller.php"; include_once "../controllers/newscontroller.php";
                                 echo getUserNameById($elem["author"]);
                                 echo "<br />";
                                 echo getNewsDate($elem["created"]);
