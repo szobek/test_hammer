@@ -25,14 +25,14 @@ if (isset($result) && $result != null) {
 <html lang="en">
 
 <head>
-    <?php include "header.php"; ?>
+    <?php include "sections/header.php"; ?>
     <title><?php echo $title; ?></title>
     <script src="js/tinymce/tinymce.min.js"></script>
     <script src="js/createAndUpdate.js"></script>
 </head>
 
 <body>
-    <?php include "menu.php"; ?>
+    <?php include "sections/menu.php"; ?>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 pt-4">
@@ -42,7 +42,7 @@ if (isset($result) && $result != null) {
                         <img alt="news image" style="width:auto; max-width: 100%;" />
                     </picture>
                 </p>
-                <form name="photo" id="imageUploadForm" enctype="multipart/form-data" action="<?php echo 'setNews.php?function=upload_img' ?>" method="post">
+                <form name="photo" id="imageUploadForm" enctype="multipart/form-data" action="<?php echo '/controllers/setNews.php?function=upload_img' ?>" method="post">
                     <input type="file" name="image" />
                     <input type="submit" name="upload" value="Upload" />
                 </form>

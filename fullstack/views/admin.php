@@ -32,8 +32,8 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
         </div>
         <div class="row">
             <div class="col-12">
-                <a href="setNews.php?function=createNewsView">
-                    <button class="btn btn-primary">Create new</button>
+                <a href="/controllers/setNews.php?function=createNewsView">
+                    <button class="btn btn-primary">Create newn News</button>
                 </a>
             </div>
         </div>
@@ -90,7 +90,7 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
         </div>
         <div class="row">
             <div class="col-12">
-            <a href="setNews.php?function=createNewsView">
+            <a href="/controllers/setNews.php?function=createNewsView">
                 <button class="btn btn-primary">Create new</button>
             </a>
             </div>
