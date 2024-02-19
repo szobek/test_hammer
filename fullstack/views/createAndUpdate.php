@@ -27,8 +27,8 @@ if (isset($result) && $result != null) {
 <head>
     <?php include "sections/header.php"; ?>
     <title><?php echo $title; ?></title>
-    <script src="js/tinymce/tinymce.min.js"></script>
-    <script src="js/createAndUpdate.js"></script>
+    <script src="../js/tinymce/tinymce.min.js"></script>
+    <script src="../js/createAndUpdate.js"></script>
 </head>
 
 <body>

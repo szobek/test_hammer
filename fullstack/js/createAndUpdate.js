@@ -17,8 +17,8 @@ $(document).ready(function (e) {
     contentType: false,
       success: function (data) {
         if(data!="FILE_TYPE_ERROR"){
-          $("#imgurl").val(`newsimg/${data}`)
-          $("#newimgurl").attr('srcset',`newsimg/${data}`)
+          $("#imgurl").val(`uploaded/${data}`)
+          $("#newimgurl").attr('srcset',`uploaded/${data}`)
 
         }
       },

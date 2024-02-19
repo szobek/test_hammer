@@ -19,8 +19,8 @@ if(isset($_SESSION["logged"])){
 <div class="login-page">
   <div class="form">
     <form class="login-form" method="post" action="/controllers/setUser.php?function=checklogin">
-      <input type="text" name="username" placeholder="username"/>
-      <input type="password" name="psw" placeholder="password"/>
+      <input type="text" name="username" value="kn@test.hu" placeholder="username"/>
+      <input type="password" name="psw" value="tttttt" placeholder="password"/>
       <button>login</button>
     </form>
     <a href="/views/newsList.php">Open news list without login</a>

@@ -37,7 +37,7 @@ class setNews
         $result = open("DELETE FROM `news` WHERE `id`=?", [$id]);
         $success = ($result > 0) ? true : false;
         if ($success) {
-            header('Location: admin.php');
+            header('Location: /views/admin.php');
         } else {
             echo "Hiba törlés közben";
         }
@@ -79,7 +79,6 @@ class setNews
 
     function uploadImage()
     {
-        if (!is_dir('../uploaded')) mkdir('../uploaded', 0755);
         $filetype = array('png', 'jpeg',);
         foreach ($_FILES as $key) {
             //var_dump($key);die();

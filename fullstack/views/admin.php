@@ -12,8 +12,8 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
 
     <title>Document</title>
     <?php include "sections/header.php"; ?>
-    <script src="js/admin.js"></script>
-    <link rel="stylesheet" href="css/admin.css">
+    <script src="../js/admin.js"></script>
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
         <div class="row">
             <div class="col-12">
                 <a href="/controllers/setNews.php?function=createNewsView">
-                    <button class="btn btn-primary">Create newn News</button>
+                    <button class="btn btn-primary">Create new News</button>
                 </a>
             </div>
         </div>
@@ -69,7 +69,7 @@ if(!isset($_SESSION["logged"])) header('Location: login.php');
                                 <td> <a href="newsSingle.php?id=<?php echo $elem["id"] ?>"> <?php echo $elem["title"] ?></a></td>
                                 <td><?php echo $elem["news_desc"] ?></td>
                                 <td>
-                                    <a href="setNews.php?function=update&id=<?php echo $elem["id"] ?>">
+                                    <a href="../controllers/setNews.php?function=update&id=<?php echo $elem["id"] ?>">
                                         <button class="btn btn-success">
                                             U
                                         </button>

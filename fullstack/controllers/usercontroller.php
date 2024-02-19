@@ -7,5 +7,5 @@ function getUserNameById(int $id):String{
 }
 function loggingout(){
     session_destroy();
-    header('Location: login.php');
+    header('Location: /views/login.php');
 }
