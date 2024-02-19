@@ -1,6 +1,6 @@
 <?php
 
-class User
+class setUser
 {
     private String $url;
 
@@ -42,4 +42,4 @@ class User
     }
 }
 
-new User();
+new setUser();
