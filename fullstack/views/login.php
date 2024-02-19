@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["logged"])){
+    header('Location: admin.php' , true);
+   die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +17,7 @@
 </head>
 <body>
 
-<?php
-session_start();
-if(isset($_SESSION["logged"])){
-    header('Location: admin.php' , true);
-   die();
-}
-?>
+
 <div class="login-page">
   <div class="form">
     <form class="login-form" method="post" action="/controllers/setUser.php?function=checklogin">
