@@ -41,9 +41,9 @@
                     <div class="card-body">
                         <p><small>
                                     <?php include_once "../controllers/usercontroller.php"; include_once "../controllers/newscontroller.php";
-                                echo "Write by: <b>".getUserNameById($news["author"])."</b>";
+                                echo "Write by: <b>".setUser::getUserNameById($news["author"])."</b>";
                                 echo "<br />";
-                                echo "Date: <b>".getNewsDate($news["created"])."</b>";
+                                echo "Date: <b>".setNews::getNewsDate($news["created"])."</b>";
                                 ?> </small></p>
                         <p class="card-text"><?php echo $news["content"]; ?></p>
                     </div>
