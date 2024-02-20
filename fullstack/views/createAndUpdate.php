@@ -7,7 +7,7 @@ if (!isset($_SESSION["logged"])) header('Location: login.php');
 if (isset($result) && $result != null) {
     $news = $result[0];
     $title = "Update | " . $news["title"];
-    $action = "setNews.php?function=saveAfterEdit&id=" . $news["id"];
+    $action = "newscontroller.php?function=saveAfterEdit&id=" . $news["id"];
 } else {
     $news = [];
     $news["id"] = "";
@@ -16,7 +16,7 @@ if (isset($result) && $result != null) {
     $news["content"] = "";
     $news['image_url'] = "";
     $title = "Create news";
-    $action = "setNews.php?function=createNews";
+    $action = "newscontroller.php?function=createNews";
 }
 //var_dump($news);
 ?>
@@ -42,7 +42,7 @@ if (isset($result) && $result != null) {
                         <img alt="news image" style="width:auto; max-width: 100%;" />
                     </picture>
                 </p>
-                <form name="photo" id="imageUploadForm" enctype="multipart/form-data" action="<?php echo '/controllers/setNews.php?function=upload_img' ?>" method="post">
+                <form name="photo" id="imageUploadForm" enctype="multipart/form-data" action="<?php echo '/controllers/newscontroller.php?function=upload_img' ?>" method="post">
                     <input type="file" name="image" />
                     <input type="submit" name="upload" value="Upload" />
                 </form>

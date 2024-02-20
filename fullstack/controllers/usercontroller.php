@@ -6,23 +6,26 @@ class setUser
 
     public function __construct()
     {
-        session_start();
-        $this->url=$_REQUEST["function"];
+        if (!isset($_SESSION)) session_start();
+        if (isset($_REQUEST["function"])) {
 
-        switch ($this->url) {
-            case "logout":
-                $this->logout();
-                break;
-            case "checklogin":
-                $this->checkLogin();
-                break;
-            default:
-                null;
+            $this->url = $_REQUEST["function"];
+
+            switch ($this->url) {
+                case "logout":
+                    $this->logout();
+                    break;
+                case "checklogin":
+                    $this->checkLogin();
+                    break;
+                default:
+                    null;
+            }
         }
     }
 
 
-   
+
     function checkLogin()
     {
 
@@ -36,16 +39,17 @@ class setUser
             header('Location: /views/admin.php');
         } else  header('Location: /views/login.php', true);
     }
-    function getUserNameById(int $id):String{
+    static function getUserNameById(int $id): String
+    {
         require_once "../connectToDb.php";
-        $result=open("SELECT `name` FROM users WHERE id=?",[$id]);
+        $result = open("SELECT `name` FROM users WHERE id=?", [$id]);
         return $result[0]["name"];
     }
-    function logout(){
+    function logout()
+    {
         session_destroy();
         header('Location: /views/login.php');
     }
 }
 
 new setUser();
-

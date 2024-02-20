@@ -40,9 +40,10 @@
                                 <h5 class="card-title"><?php echo $elem["title"]; ?></h5>
                                 <p><small>
                                     <?php include_once "../controllers/usercontroller.php"; include_once "../controllers/newscontroller.php";
-                                echo getUserNameById($elem["author"]);
+                                    
+                                echo setUser::getUserNameById($elem["author"]);
                                 echo "<br />";
-                                echo getNewsDate($elem["created"]);
+                                echo setNews::getNewsDate($elem["created"]);
                                 ?> </small></p>
                                 <p class="card-text"><?php echo $elem["news_desc"]; ?></p>
                             </div>
