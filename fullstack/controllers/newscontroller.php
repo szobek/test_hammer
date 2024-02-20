@@ -101,6 +101,7 @@ class setNews
             if ($key['size'] < 10000000) {
                //var_dump($key);
                move_uploaded_file($key['tmp_name'], $path);
+               echo $name;
             } else {
                echo "FILE_SIZE_ERROR";
             }

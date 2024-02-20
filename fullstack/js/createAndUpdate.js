@@ -14,11 +14,12 @@ $(document).ready(function (e) {
       url: $(this).attr('action'),
       data: formData,
       processData: false,
-    contentType: false,
+      contentType: false,
       success: function (data) {
-        if(data!="FILE_TYPE_ERROR"){
-          $("#imgurl").val(`uploaded/${data}`)
-          $("#newimgurl").attr('srcset',`uploaded/${data}`)
+        if (data != "FILE_TYPE_ERROR") {
+          url = `/uploaded/${data}`
+          $("#imgurl").val(url)
+          $("#newimgurl").attr('srcset', url)
 
         }
       },
