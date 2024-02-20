@@ -68,7 +68,7 @@ class setNews
       $content = $_REQUEST["content"];
       $img = $_REQUEST["img_url"];
       open("UPDATE `news` SET title=?,content=?,news_desc=?,image_url=? WHERE `id`=?", [$title, $content, $desc, $img, $id]);
-      header('Location: admin.php');
+      header('Location: /views/admin.php');
    }
 
    function createView()

@@ -3,7 +3,7 @@
     <td> <a href="newsSingle.php?id=<?php echo $elem["id"] ?>"> <?php echo $elem["title"] ?></a></td>
     <td><?php echo $elem["news_desc"] ?></td>
     <td>
-        <a href="../controllers/setNews.php?function=update&id=<?php echo $elem["id"] ?>">
+        <a href="../controllers/newscontroller.php?function=update&id=<?php echo $elem["id"] ?>">
             <button class="btn btn-success">
                 U
             </button>
