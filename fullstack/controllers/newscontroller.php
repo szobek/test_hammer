@@ -84,8 +84,8 @@ class setNews
       $img = $_REQUEST["img_url"];
       $result = open("INSERT INTO `news` (`id`, `title`, `author`, `created`, `content`, `image_url`, `news_desc`) 
     VALUES (NULL, ?, '1', current_timestamp(),? , ?, ?)", [$title, $content, $img, $desc]);
-      if ($result === []) header('Location: admin.php');
-      else header('Location: setNews.php?function=createNewsView');
+      if ($result === []) header('Location: /views/admin.php');
+      else header('Location: newscontroller.php?function=createNewsView');
    }
 
    function uploadImage()
