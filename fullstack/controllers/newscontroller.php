@@ -36,12 +36,12 @@ class setNews
    }
 
 
-   static function  getNewsDate(String $stamp): String
+   public static function  getNewsDate(String $stamp): String
    {
       return $stamp;
    }
 
-   function deleteNews(int $id)
+   private function deleteNews(int $id)
    {
       $success = false;
 
@@ -54,14 +54,14 @@ class setNews
       }
    }
 
-   function updateNewsView(int $id)
+   private function updateNewsView(int $id)
    {
       $result = open("SELECT * FROM `news` WHERE `id`=?", [$id]);
 
       include "../views/createAndUpdate.php";
    }
 
-   function updateNews(int $id)
+   private function updateNews(int $id)
    {
       $title = $_REQUEST["title"];
       $desc = $_REQUEST["desc"];
@@ -71,12 +71,12 @@ class setNews
       header('Location: /views/admin.php');
    }
 
-   function createView()
+   private function createView()
    {
       include "../views/createAndUpdate.php";
    }
 
-   function saveNewsToDB()
+   private function saveNewsToDB()
    {
       $title = $_REQUEST["title"];
       $content = $_REQUEST["content"];
@@ -88,7 +88,7 @@ class setNews
       else header('Location: newscontroller.php?function=createNewsView');
    }
 
-   function uploadImage()
+   private function uploadImage()
    {
       $filetype = array('png', 'jpeg',);
       foreach ($_FILES as $key) {
