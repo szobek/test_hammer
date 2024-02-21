@@ -43,7 +43,8 @@ class setUser
     {
         require_once "../connectToDb.php";
         $result = open("SELECT `name` FROM users WHERE id=?", [$id]);
-        return $result[0]["name"];
+        if(isset($result[0])) return $result[0]["name"];
+        else return "";
     }
     function logout()
     {
